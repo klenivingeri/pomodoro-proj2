@@ -1,14 +1,14 @@
-import './App.css'
+
 import { Button } from './components/Button'
 
 function App() {
 
   return (
     <>
-    <Button color="primary" />
-    <Button color="secundary" />
-    <Button color="danger" />
-    <Button color="success" />
+    <Button variant="primary" />
+    <Button variant="secundary" />
+    <Button variant="danger" />
+    <Button variant="success" />
     </>
   )
 }
