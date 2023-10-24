@@ -4,14 +4,13 @@ import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
 
 function App() {
-
   return (
     <ThemeProvider theme={defaultTheme}>
-    <Button variant="primary" />
-    <Button variant="secundary" />
-    <Button variant="danger" />
-    <Button variant="success" />
-    <GlobalStyle/ >
+      <Button variant="primary" />
+      <Button variant="secundary" />
+      <Button variant="danger" />
+      <Button variant="success" />
+      <GlobalStyle />
     </ThemeProvider>
   )
 }
