@@ -19,5 +19,5 @@ height: 40px;
 border-radius:4px;
 border: 0px;
 margin: 8px;
-background-color: ${props => props.theme.primary}
+background-color: ${props => props.theme['green-500']}
 `
