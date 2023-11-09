@@ -11,6 +11,7 @@ Currently, two official plugins are available:
 
 - npm i eslint -D
 - npm i @rocketseat/eslint-config -D
+- npm i phosphor-react
 
 Criar arquivo `.eslintrc.json`
 ```JSON
