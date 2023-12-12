@@ -49,6 +49,10 @@ const BaseInput = styled.input`
 
 export const TaskInput = styled(BaseInput)`
   flex:1;
+
+  &::-webkit-calendar-picker-indicator { /*remover a seta da lista*/
+    display: none !important;
+  }
 `
 
 export const MinutesAmountInput = styled(BaseInput)`
