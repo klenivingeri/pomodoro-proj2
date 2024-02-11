@@ -12,6 +12,7 @@ Currently, two official plugins are available:
 - npm i eslint -D
 - npm i @rocketseat/eslint-config -D
 - npm i phosphor-react
+- npm i react-hook-form
 
 Criar arquivo `.eslintrc.json`
 ```JSON
