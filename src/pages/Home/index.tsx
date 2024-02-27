@@ -30,7 +30,7 @@ interface NewCycleFormData {
 type NewCycleFormData = zod.infer<typeof newCycleFormValidatinSchema>
 
 export function Home () {
-  const {register, handleSubmit, watch } = useForm<NewCycleFormData>({
+  const {register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidatinSchema),
     defaultValues: {
       task: '',
@@ -40,6 +40,7 @@ export function Home () {
 
   const handleCreateNewCycle = (dado: any) => {
     console.log(dado)
+    reset();
   }
 
   const task = watch('task') //controlled /  uncontrolled
