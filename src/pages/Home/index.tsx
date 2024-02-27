@@ -3,7 +3,6 @@ import  { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod' // hookForm faz a integração da zod
 import * as zod from 'zod' // fazer essa importação apenas quando não existir um export default
 
-
 import { 
   CountdownContainer,
   FormContainer,
@@ -14,8 +13,6 @@ import {
   StartCountdownButton
 } from './styles'
 
-//controlled /  uncontrolled
-
 const newCycleFormValidatinSchema = zod.object({
   task: zod.string().min(2, 'Informe a tarefa'),
   minutesAmount: zod.number()
@@ -23,16 +20,29 @@ const newCycleFormValidatinSchema = zod.object({
     .max(60, 'O ciclo precisa ser de no máximo 60 minutos')
 })
 
+/*
+interface NewCycleFormData {
+  task: string
+  minutesAmount: number
+}
+*/
+
+type NewCycleFormData = zod.infer<typeof newCycleFormValidatinSchema>
+
 export function Home () {
-  const {register, handleSubmit, watch } = useForm({
-    resolver: zodResolver(newCycleFormValidatinSchema)
+  const {register, handleSubmit, watch } = useForm<NewCycleFormData>({
+    resolver: zodResolver(newCycleFormValidatinSchema),
+    defaultValues: {
+      task: '',
+      minutesAmount: 0
+    }
   })
 
   const handleCreateNewCycle = (dado: any) => {
     console.log(dado)
   }
 
-  const task = watch('task')
+  const task = watch('task') //controlled /  uncontrolled
   //const minutesAmount = watch('minutesAmount')
   const isSubmitDisabled = !task
 
